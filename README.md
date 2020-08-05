@@ -9,7 +9,7 @@
 
 + Procesador:
 
-Marca/Modelo: Intel Core i5
+++ Marca/Modelo: Intel Core i5
 Velocidad Base: 2,3 GHz
 Velocidad Máxima: 3,6 GHz
 Numero de núcleos: 2
