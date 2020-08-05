@@ -29,7 +29,7 @@ Tipo: SSD
 Tamaño: 256 GB
 Particiones: 2
 
-+ Dirección MAC de la tarjeta wifi: 
++ Dirección MAC de la tarjeta wifi: 38:f9:d3:48:d4:09
 
 + Dirección IP Interna: 192.168.1.103
 
