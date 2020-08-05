@@ -16,7 +16,7 @@
 
 + Memoria
 
- * Total: 8 GB
+ Total: 8 GB
  Tipo memoria: LPDDR3
  Velocidad 2133 MHz
 
