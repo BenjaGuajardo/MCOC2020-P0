@@ -10,4 +10,5 @@ nombre='Benja'
 dia=3
 
 print ('Hola '+nombre+' es el '+str(dia)+ ' de Agosto')
+print ('Hola {nombre} es el {dia} de Agosto'.format(dia=dia,nombre=nombre))
 print (f'Hola {nombre} es el {dia} de Agosto')
