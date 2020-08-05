@@ -1,10 +1,38 @@
 # MCOC2020-P0
 # Mi Computador
 
-+ Fabricante: Apple
-+ Modelo MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
-+ Sistema operativo: macOS Catalina
-+ Procesador Dual-Core Intel Core i5 - 2,3 GHz
-+ Numero de nucleos: 2
-+ Numero de hilos: 4
-+ Memoria: 8GB
++ Marca/modelo: Apple/MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
+
++ Tipo: Notebook
+
++ Año adquisición: 2019
+
++ Procesador:
+
+Marca/Modelo: Intel Core i5
+Velocidad Base: 2,3 GHz
+Velocidad Máxima: 3,6 GHz
+Numero de núcleos: 2
+
++ Memoria
+
+Total: 8 GB
+Tipo memoria: LPDDR3
+Velocidad 2133 MHz
+
++ Gráficas
+
+Intel Iris Plus Graphics 640
+
+Disco:
+Tipo: SSD
+Tamaño: 256 GB
+Particiones: 2
+
++ Dirección MAC de la tarjeta wifi: 
+
++ Dirección IP Interna: 192.168.1.103
+
++ Dirección IP Externa: 181.43.73.95
+ 
++ Proveedor internet: Entel Chile S.A.
