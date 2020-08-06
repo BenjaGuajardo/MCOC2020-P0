@@ -47,7 +47,7 @@
 
 ## Desempeño MIMATMUL
 
-
+![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89593529-664a0680-d81d-11ea-9d00-4f93dc6f7291.png)
 
 + ¿Como difiere del gráfico del profesor/ayudante?
 + ¿A qué se pueden deber las diferencias?
