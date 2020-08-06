@@ -1,5 +1,5 @@
 # MCOC2020-P0
-# Mi Computador
+## Mi Computador
 
 + Marca/modelo: Apple/MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
 
@@ -34,7 +34,7 @@
  
 + Proveedor internet: Entel Chile S.A.
 
-# Desempeño MATMUL
+## Desempeño MATMUL
 
 + Grafico
 
