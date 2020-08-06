@@ -6,9 +6,10 @@ x = [3,7,10,13,17,20,30,40,48,49,50,60,63,65,70,100,110,150,200,300,400,500,600,
 for i in range(10):
    
     archivo=open(f'corrida {i}.txt','w') 
-
+    c = 0
+    
     for j in x:
-       
+
         N = j
         
         A = rand(N,N)
@@ -22,9 +23,9 @@ for i in range(10):
         
         dt = t2 - t1
         
-        if i!=9:
-            archivo.write(f'{dt},')
-        else:
+        if c == 28:
             archivo.write(f'{dt}')
-   
-    archivo.close()  
+        else:
+            archivo.write(f'{dt}\r\n')
+
+    archivo.close()
