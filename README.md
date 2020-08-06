@@ -37,7 +37,7 @@
 ## Desempeño MATMUL
 
 + Grafico
-
+![timing_matmul](https://user-images.githubusercontent.com/69161061/89593349-ef147280-d81c-11ea-9cca-c903c8dc7210.png)
 + ¿Como difiere del gráfico del profesor/ayudante?
 + ¿A qué se pueden deber las diferencias?
 + El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
