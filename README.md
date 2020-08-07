@@ -58,3 +58,7 @@
 ## Desempeño MIMATMUL
 
 ![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89661927-54aa4280-d8a1-11ea-835c-0529513cd936.png)
+
++ ¿A qué se pueden deber las diferencias?
+  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul.py", el cálculo es mucho más lento y se requiere del uso de más procesadores para llevarlo a cabo. Además, no fue posible realizar la operación con matrices mayores a 500x500, debido a que el tiempo de ejecución era excesivo.
++ Se puede ver que el uso de memoria sigue siendo el mismo, esto es porque no depende del cálculo, sino que depende de las dimensiones de las matrices, por lo que es similar al gráfico de desempeño MATMUL.
