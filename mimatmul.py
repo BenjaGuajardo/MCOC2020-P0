@@ -14,12 +14,3 @@ def mimatmul(A,B):
     for r in result:
         C.append(r)
     return C
-#
-#N=3
-#A = rand(N,N)
-#B = rand(N,N)
-#
-#C=mimatmul(A,B)
-#D=A@B
-#print (f'C= {C}')
-#print (f'D= {D}')
