@@ -44,7 +44,7 @@
   + Al teminar, N = 10000, mi grafico se acerca mas al minuto, mientras que en el ejemplo del profesor esta mas cerca de los 10 s.
 + ¿A qué se pueden deber las diferencias?
 + El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
-+ ¿Qué versión de python está usando? 3.3.6
++ ¿Qué versión de python está usando? 3.7
 + ¿Qué versión de numpy está usando? 1.16.4
 + Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida para confirmar. 
   + Durante la ejecución se utilizan los 4 núcleos lógicos del procesador (hilos), tal como se puede ver en la siguiente captura.
