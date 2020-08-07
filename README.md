@@ -46,3 +46,5 @@
 + Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida para confirmar. 
 
 ## Desempeño MIMATMUL
+
+![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89661927-54aa4280-d8a1-11ea-835c-0529513cd936.png)
