@@ -47,8 +47,6 @@
 + El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
   + El uso de memoria es lineal porque este depende solamente de las dimensiones de la matriz, por lo que a medida que aumenta, también lo hace la memoria.
   + El tiempo no es lineal ya que depende de la cantidad de proesadores que se estan usando, por ejemplo incicialmente el tiempo comienza a disminuir debido a que se comienzan a utilizar más procesadores. Entonces, a esto se deben los pics del gráfico ya que va aumentando el uso de los procesadores. Finalmente el tiempo tiene un comportamiento más lineal porque ya se están utilizando todos los núcleos disponibles.
-  + El uso de memoria es lineal porque este depende solamente de las dimensiones de la matriz, por lo que a medida que aumenta, también lo hace la memoria.
-  + El uso de memoria es lineal porque este depende solamente de las dimensiones de la matriz, por lo que a medida que aumenta, también lo hace la memoria.
 + ¿Qué versión de python está usando?
   + 3.7.3
 + ¿Qué versión de numpy está usando?
