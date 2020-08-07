@@ -12,6 +12,7 @@
   + Velocidad Base: 2,3 GHz
   + Velocidad Máxima: 3,6 GHz
   + Numero de núcleos: 2
+  + Numero de núcles lógicos: 4
 
 + Memoria
 
@@ -39,11 +40,15 @@
 ![timing_matmul](https://user-images.githubusercontent.com/69161061/89593349-ef147280-d81c-11ea-9cca-c903c8dc7210.png)
 
 + ¿Como difiere del gráfico del profesor/ayudante?
+  + El primer calculo de 'C', cuando N = 3, en mi caso demora aproximadamente 1 s, mientras que en el caso del profesor demora menos de 0.1 ms.
+  + Al teminar, N = 10000, mi grafico se acerca mas al minuto, mientras que en el ejemplo del profesor esta mas cerca de los 10 s.
 + ¿A qué se pueden deber las diferencias?
 + El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
 + ¿Qué versión de python está usando? 3.3.6
 + ¿Qué versión de numpy está usando? 1.16.4
 + Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida para confirmar. 
+  + Durante la ejecución se utilizan los 4 núcleos lógicos del procesador (hilos), tal como se puede ver en la siguiente captura.
+  
 
 ## Desempeño MIMATMUL
 
