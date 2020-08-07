@@ -1,16 +1,19 @@
-from scipy import matmul, rand
+from scipy import rand
+from mimatmul import mimatmul
 from time import perf_counter
 
 Ns = [3,7,10,13,17,20,30,40,48,49,50,60,63,65,70,100,110,150,200,300,400,500,600,800,1000,2000,5000,10000]
-
-corridas = 10
+Ns = [3,7,10,13,17,20,30,40,48,49,50,60,63,65,70,100,110,150,200,300,400,500]
+corridas = 3
 
 for i in range(corridas):
    
-    archivo=open(f'corrida {i}.txt','w') 
+    archivo=open(f'mimatmul {i}.txt','w') 
     c = 0
     
     for j in Ns:
+        
+        c +=1
 
         N = j
         
@@ -19,7 +22,7 @@ for i in range(corridas):
         
         t1 = perf_counter()
         
-        C = A@B        
+        C = mimatmul(A,B)        
         
         t2 = perf_counter()
         
@@ -29,14 +32,5 @@ for i in range(corridas):
             archivo.write(f'{dt}')
         else:
             archivo.write(f'{dt}\r\n')
-    
+
     archivo.close()
-
-#solo guarde en .txt los tiempos. Para la memoria utilice la
-#siguiente funcion en el codigo para graficar
-
-memoria=[]
-for i in Ns:
-    n=i*i
-    m=3*n*8
-    memoria.append(m)
