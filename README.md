@@ -58,7 +58,13 @@
 ## Desempeño MIMATMUL
 
 ![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89661927-54aa4280-d8a1-11ea-835c-0529513cd936.png)
-
++ ¿Como difiere del gráfico del profesor/ayudante?
+  + Los gráficos son bastante similares, ya que tienen un crecimiento lineal a medida que aumenta N. Además, los tiempos de ejecución son similares.
 + ¿A qué se pueden deber las diferencias?
-  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul.py", el cálculo es mucho más lento y se requiere del uso de más procesadores para llevarlo a cabo. Además, no fue posible realizar la operación con matrices mayores a 500x500, debido a que el tiempo de ejecución era excesivo.
+  + Diferencias en el desempeño se puede deber también a la función mimatmul, que podría ser diferente. 
+  + También, podrían deberse a la cantidad de núcleos que tiene el procesador y la cantidad que se utilizan durante la ejecución del programa.
++ El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
+  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul.py", el cálculo es mucho más lento y se requiere del uso de más procesadores para llevarlo a cabo. Además, debido a que el tiempo de ejecución era excesivo, solo se pudo realizar la operación hasta matrices de N = 500.
++ Uso de procesadores. 
+  Al igual que en el desempeño MATMUL, se utilizan los cuatro nucleos lógicos del procesador.
   + Se puede ver que el uso de memoria sigue siendo el mismo, esto es porque no depende del cálculo, sino que depende de las dimensiones de las matrices, por lo que es similar al gráfico de desempeño MATMUL.
