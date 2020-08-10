@@ -58,12 +58,13 @@
 ## Desempeño MIMATMUL
 ![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89792966-40f61a80-daf3-11ea-8de9-ab41c550cce7.png)
 + ¿Como difiere del gráfico del profesor/ayudante?
-  + Los gráficos son bastante similares, ya que tienen un crecimiento lineal a medida que aumenta N. Además, los tiempos de ejecución son similares.
-+ ¿A qué se pueden deber las diferencias?
-  + Diferencias en el desempeño se puede deber también a la función mimatmul, que podría ser diferente. 
-  + También, podrían deberse a la cantidad de núcleos que tiene el procesador y la cantidad que se utilizan durante la ejecución del programa.
-+ El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
-  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul.py", el cálculo es mucho más lento y se requiere del uso de más procesadores para llevarlo a cabo. Además, debido a que el tiempo de ejecución era excesivo, solo se pudo realizar la operación hasta matrices de N = 500.
-+ Uso de procesadores. 
-  Al igual que en el desempeño MATMUL, se utilizan los cuatro nucleos lógicos del procesador.
-  + Se puede ver que el uso de memoria sigue siendo el mismo, esto es porque no depende del cálculo, sino que depende de las dimensiones de las matrices, por lo que es similar al gráfico de desempeño MATMUL.
+  + Los gráficos son bastante similares, tienen un crecimiento continuo a medida que aumenta N.
+  + En mi caso, sólo grafiqué hasta N=500, debido al tiempo que tomaba utilizando mayores N (tiempos sobre los 2 minutos).
++ Diferencias con MATMUL.
+  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento...
+  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento...
+  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul", el cálculo es mucho más lento y se rpodría decir que el computador hace un menor esfuerzo.
++ Uso de procesadores
+<img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
+
+  + En este caso, el programa utiliza un menor porcentaje debido a MIMATMUl. Como se puede ver en el desempeño MATMUL, se utilizan la totalidad de procesadores. Al implementar MIMATMUL, ya no se utilizan todos debido a...
