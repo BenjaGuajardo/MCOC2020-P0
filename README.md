@@ -72,6 +72,6 @@
   
 + Uso de procesadores
 
-<img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
-
   + En este caso, el programa utiliza un menor porcentaje. Como se puede ver, no se utilizan la totalidad de procesadores y esta es una de las razones del por qué de la lentitud del programa.
+  
+<img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
