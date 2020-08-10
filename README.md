@@ -61,9 +61,8 @@
   + Los gráficos son bastante similares, tienen un crecimiento continuo a medida que aumenta N.
   + En mi caso, sólo grafiqué hasta N=500, debido al tiempo que tomaba utilizando mayores N (tiempos sobre los 2 minutos).
 + Diferencias con MATMUL.
-  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento...
-  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento...
-  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul", el cálculo es mucho más lento y se rpodría decir que el computador hace un menor esfuerzo.
+  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento porque(...)el cálculo es mucho más lento y se podría decir que el computador hace un menor esfuerzo.
+  + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul", se trabaja solo con 2 núcleos lo cual hace todo el proceso más lento y sin picks.
 + Uso de procesadores
 <img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
 
