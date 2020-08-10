@@ -56,8 +56,7 @@
   <img width="1440" alt="Captura de Pantalla 2020-08-07 a la(s) 11 44 47" src="https://user-images.githubusercontent.com/69161061/89664055-91c40400-d8a4-11ea-8231-b9b517e88284.png">
 
 ## Desempeño MIMATMUL
-
-![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89661927-54aa4280-d8a1-11ea-835c-0529513cd936.png)
+![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89792966-40f61a80-daf3-11ea-8de9-ab41c550cce7.png)
 + ¿Como difiere del gráfico del profesor/ayudante?
   + Los gráficos son bastante similares, ya que tienen un crecimiento lineal a medida que aumenta N. Además, los tiempos de ejecución son similares.
 + ¿A qué se pueden deber las diferencias?
