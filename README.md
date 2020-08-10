@@ -66,12 +66,12 @@
   
 + Diferencias con MATMUL.
 
-  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante el código puro de python, el proceso se hace mucho mas lento porque(...)el cálculo es mucho más lento y se podría decir que el computador hace un menor esfuerzo.
+  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante el código puro de python, el proceso se hace mucho mas lento porque se programó la multiplicación en un nivel alto (python). En adición a lo anterior, no operan todos los procesadores, lo cual implica una baja en el rendimiento.
   
   + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul", se trabaja solo con 2 núcleos lo cual hace todo el proceso más lento y sin picks.
   
 + Uso de procesadores
 
-  + En este caso, el programa utiliza un menor porcentaje. Como se puede ver, no se utilizan la totalidad de procesadores y esta es una de las razones del por qué de la lentitud del programa.
+  + En este caso, el programa utiliza un menor porcentaje. Como se puede ver, no se utilizan la totalidad de procesadores y esta es una de las razones del por qué de la lentitud del programa. Comparando con el desempeño MIMATMUL, la forma de operar es óptima en ese caso ya que por ejemplo, numpy, está escrito en un nivel bajo.
   
 <img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
