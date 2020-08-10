@@ -56,14 +56,22 @@
   <img width="1440" alt="Captura de Pantalla 2020-08-07 a la(s) 11 44 47" src="https://user-images.githubusercontent.com/69161061/89664055-91c40400-d8a4-11ea-8231-b9b517e88284.png">
 
 ## Desempeño MIMATMUL
+
 ![timing_mimatmul](https://user-images.githubusercontent.com/69161061/89792966-40f61a80-daf3-11ea-8de9-ab41c550cce7.png)
+
 + ¿Como difiere del gráfico del profesor/ayudante?
+
   + Los gráficos son bastante similares, tienen un crecimiento continuo a medida que aumenta N.
-  + En mi caso, sólo grafiqué hasta N=500, debido al tiempo que tomaba utilizando mayores N (tiempos sobre los 2 minutos).
+  + En mi caso, sólo grafiqué hasta N=500, debido al tiempo que demoraba utilizando mayores N (tiempos sobre los 2 minutos).
+  
 + Diferencias con MATMUL.
-  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante MIMATMUL, el proceso se hace mucho mas lento porque(...)el cálculo es mucho más lento y se podría decir que el computador hace un menor esfuerzo.
+
+  + Diferencias en el desempeño se deben a la función mimatmul. Al estar multiplicando mediante el código puro de python, el proceso se hace mucho mas lento porque(...)el cálculo es mucho más lento y se podría decir que el computador hace un menor esfuerzo.
+  
   + Como se puede observar en el gráfico, el comportamiento es más lineal ya que al estarse usando "mimatmul", se trabaja solo con 2 núcleos lo cual hace todo el proceso más lento y sin picks.
+  
 + Uso de procesadores
+
 <img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
 
-  + En este caso, el programa utiliza un menor porcentaje. Como se puede ver en el desempeño MATMUL, se utilizan la totalidad de procesadores y al implementar MIMATMUL, ya no se utilizan todos. Lo anterior se debe a...
+  + En este caso, el programa utiliza un menor porcentaje. Como se puede ver, no se utilizan la totalidad de procesadores y esta es una de las razones del por qué de la lentitud del programa.
