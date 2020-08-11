@@ -75,3 +75,15 @@
   + En este caso, el programa utiliza un menor porcentaje. Como se puede ver, no se utilizan la totalidad de procesadores y esta es una de las razones del por qué de la lentitud del programa. Comparando con el desempeño MIMATMUL, la forma de operar es óptima en ese caso ya que por ejemplo, numpy, está escrito en un nivel bajo.
   
 <img width="1440" alt="Captura de Pantalla 2020-08-10 a la(s) 11 30 07" src="https://user-images.githubusercontent.com/69161061/89800628-0a250200-dafd-11ea-9b02-0fe516c36c82.png">
+
+## Desempeño de INV
+
++ Tipos de datos
+  + np.half = 2 Bytes
+  + np.single = 4 Bytes
+  + np.double = 8 Bytes
+  + np. londouble = 16 Bytes
+  
++ ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
+
++ ¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)
