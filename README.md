@@ -89,10 +89,12 @@
     + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 3,8 GB lo cual equivalía a 4 matrices.
     + El desempeño es similar para el caso np.single y np.double. Para np.half y np.double, resultó que no eran compatibles con numpy.linalg.
     +  En el caso 1 se encuentra el rendimiento más bajo y menos óptimo, lo cual se evidencia en los tiempos de ejecución.
+    
     ![Caso 1 np double](https://user-images.githubusercontent.com/69161061/90050504-48105a80-dca4-11ea-89e3-52cb9ff126ca.jpg) ![Caso 1 np single](https://user-images.githubusercontent.com/69161061/90050507-49418780-dca4-11ea-8eeb-c57ed51355cc.jpg)
   + Caso 2: scipy.linalg.inv con overwrite_a=False
     + El porcentaje en los procesadores fue ~55%, siendo este valor más alto que para en el caso 1, haciéndose uso de los 4 núcleos.
     + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 2,5 GB lo cual equivalía a 2 matrices.
+    
     ![Caso 2 np double](https://user-images.githubusercontent.com/69161061/90050509-4a72b480-dca4-11ea-9216-edf4c820c676.jpg) ![Caso 2 np half](https://user-images.githubusercontent.com/69161061/90050510-4b0b4b00-dca4-11ea-80d4-e949283b7b73.jpg) ![Caso 2 np longdouble](https://user-images.githubusercontent.com/69161061/90050512-4ba3e180-dca4-11ea-8095-8546515e675c.jpg) ![Caso 2 np single](https://user-images.githubusercontent.com/69161061/90050514-4ba3e180-dca4-11ea-8aa2-3cc057173c64.jpg)
   + Caso 3: scipy.linalg.inv con overwrite_a=True
     + En este caso en particular se observó un porcentaje de ~90% por parte de los procesadores, atribuible a overwrite_a=True ya que en el caso 2 esto no sucedía.
@@ -100,6 +102,7 @@
     + En los gráficos se puede ver, no tan claro debido a que la diferencia en segundos es mínima, que el caso 3 es el óptimo. Considerando lo anterior, en caso de necesitar realizar operaciones que requieran más tiempo y memoria, obviamente el caso 3 sería el preferible para utilizar.
     + En la siguiente captura se puede observar el desempeño en el caso 3 half.
     <img width="1440" alt="Captura de Pantalla 2020-08-11 a la(s) 11 24 53" src="https://user-images.githubusercontent.com/69161061/90038016-e398cf80-dc92-11ea-8222-3d6a44530e28.png">
+    
     ![Caso 3 np double](https://user-images.githubusercontent.com/69161061/90050516-4c3c7800-dca4-11ea-92d5-8163f7c5fa07.jpg) ![Caso 3 np half](https://user-images.githubusercontent.com/69161061/90050519-4cd50e80-dca4-11ea-9d51-53a018b836f9.jpg) ![Caso 3 np longdouble](https://user-images.githubusercontent.com/69161061/90050521-4cd50e80-dca4-11ea-9bfb-644748cc71b3.jpg) ![Caso 3 np single](https://user-images.githubusercontent.com/69161061/90050523-4cd50e80-dca4-11ea-8933-6aef64ab8836.jpg)
 
 
