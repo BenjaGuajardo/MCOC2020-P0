@@ -83,12 +83,21 @@
   + np.single = 4 Bytes
   + np.double = 8 Bytes
   + np. londouble = 16 Bytes
-
 + Análisis de desempeño INV
   + Caso 1: numpy.linalg.inv
-    + Para el primer caso, en cuanto a procesadores, durante la corrida del programa se pudo ibservar que 2 de los 4 núcleos estaban trabajando (siendo esto menos del 50%). 
-    + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 3,8 GB lo cual equivalía a 2 matrices.
+    + Para el primer caso, en cuanto a procesadores, durante la corrida del programa se pudo observar que 2 de los 4 núcleos estaban trabajando (siendo esto menos del 50%). 
+    + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 3,8 GB lo cual equivalía a 4 matrices.
     + El desempeño es similar para el caso np.single y np.double. Para np.half y np.double, resultó que no eran compatibles con numpy.linalg.
+    +  En el caso 1 se encuentra el rendimiento más bajo y menos óptimo, lo cual se evidencia en los tiempos de ejecución.
+  + Caso 2: scipy.linalg.inv con overwrite_a=False
+    + El porcentaje en los procesadores fue ~55%, siendo este valor más alto que para en el caso 1, haciéndose uso de los 4 núcleos.
+    + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 2,5 GB lo cual equivalía a 2 matrices.
+  + Caso 3: scipy.linalg.inv con overwrite_a=True
+    + En este caso en particular se observó un porcentaje de ~90% por parte de los procesadores, atribuible a overwrite_a=True ya que en el caso 2 esto no sucedía.
+    + Se podría concluir que este es el caso más eficiente, en donde más porcentaje de los procesadores es ocupado y donde el tiempo de ejecución es menor.
+    + En los gráficos se puede ver, no tan claro debido a que la diferencia en segundos es mínima, que el caso 3 es el óptimo. Considerando lo anterior, en caso de necesitar realizar operaciones que requieran más tiempo y memoria, obviamente el caso 3 sería el preferible para utilizar.
+    + En la siguiente captura se puede observar el desempeño en el caso 3 half.
+    
 
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
 
