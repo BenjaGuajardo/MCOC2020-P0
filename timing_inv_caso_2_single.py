@@ -45,7 +45,7 @@ for corrida in range(corridas):
          
         A = single(A) 
            
-        memoria=n*n*4 #Single = 32 bits = 4 bytes
+        memoria=2*n*n*4 #Single = 32 bits = 4 bytes
         
         t1 = perf_counter()
         

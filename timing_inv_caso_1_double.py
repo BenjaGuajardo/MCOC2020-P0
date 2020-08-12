@@ -46,7 +46,7 @@ for corrida in range(corridas):
          
         A = double(A) 
            
-        memoria=n*n*8 #averiguar cuanta memoria se ocupa segun numeros
+        memoria=4*n*n*8 #averiguar cuanta memoria se ocupa segun numeros
         
         t1 = perf_counter()
         

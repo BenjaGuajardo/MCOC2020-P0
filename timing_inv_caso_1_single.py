@@ -11,13 +11,13 @@ Ns = [
     125, 160, 200,
     250, 350, 500,
     600, 800, 1000,
-    2000, 5000, 10000]
+    2000]
 
-corridas = 1
+corridas = 10
 
 for corrida in range(corridas):
     
-    archivo=open(f'caso_1_single {corrida} prueba.txt','w')
+    archivo=open(f'caso_1_single {corrida}.txt','w')
     
     #for n in range(3,N+1):
     for n in Ns:
@@ -47,7 +47,7 @@ for corrida in range(corridas):
     
         A = single(A) 
            
-        memoria=n*n*4 #averiguar cuanta memoria se ocupa segun numeros
+        memoria=4*n*n*4 #averiguar cuanta memoria se ocupa segun numeros
         
         t1 = perf_counter()
         

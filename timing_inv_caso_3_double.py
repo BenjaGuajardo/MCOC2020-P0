@@ -2,8 +2,6 @@ from scipy import linalg, zeros
 from numpy import matrix, half, single, double, longdouble
 from time import perf_counter
 
-
-
 Ns = [
     2, 5, 10,
     12, 15, 20,
@@ -47,7 +45,7 @@ for corrida in range(corridas):
          
         A = double(A) 
            
-        memoria=n*n*8 #Double
+        memoria=2*n*n*8 #Double
         
         t1 = perf_counter()
         

@@ -45,7 +45,7 @@ for corrida in range(corridas):
          
         A = half(A) 
            
-        memoria=n*n*2 #Half
+        memoria=2*n*n*2 #Half
         
         t1 = perf_counter()
         

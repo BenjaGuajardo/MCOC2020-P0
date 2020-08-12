@@ -45,7 +45,7 @@ for corrida in range(corridas):
          
         A = longdouble(A) 
            
-        memoria=n*n*16 #longdouble
+        memoria=2*n*n*16 #longdouble
         
         t1 = perf_counter()
         
