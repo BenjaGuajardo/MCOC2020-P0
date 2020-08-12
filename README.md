@@ -78,12 +78,19 @@
 
 ## Desempeño de INV
 
-+ Tipos de datos
++ Tamaño en memoria de cada tipo de dato
   + np.half = 2 Bytes
   + np.single = 4 Bytes
   + np.double = 8 Bytes
   + np. londouble = 16 Bytes
-  
+
++ Análisis de desempeño INV
+  + Caso 1: numpy.linalg.inv
+    + Para el primer caso, en cuanto a procesadores, durante la corrida del programa se pudo ibservar que 2 de los 4 núcleos estaban trabajando (siendo esto menos del 50%). 
+    + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 3,8 GB lo cual equivalía a 2 matrices.
+    + El desempeño es similar para el caso np.single y np.double. Para np.half y np.double, resultó que no eran compatibles con numpy.linalg.
+
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
 
 + ¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)
+
