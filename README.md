@@ -97,7 +97,8 @@
     + Se podría concluir que este es el caso más eficiente, en donde más porcentaje de los procesadores es ocupado y donde el tiempo de ejecución es menor.
     + En los gráficos se puede ver, no tan claro debido a que la diferencia en segundos es mínima, que el caso 3 es el óptimo. Considerando lo anterior, en caso de necesitar realizar operaciones que requieran más tiempo y memoria, obviamente el caso 3 sería el preferible para utilizar.
     + En la siguiente captura se puede observar el desempeño en el caso 3 half.
-    
+    <img width="1440" alt="Captura de Pantalla 2020-08-11 a la(s) 11 24 53" src="https://user-images.githubusercontent.com/69161061/90038016-e398cf80-dc92-11ea-8222-3d6a44530e28.png">
+
 
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
 
