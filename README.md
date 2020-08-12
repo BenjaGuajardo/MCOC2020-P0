@@ -105,6 +105,8 @@
     
     ![Caso 3 np double](https://user-images.githubusercontent.com/69161061/90050516-4c3c7800-dca4-11ea-92d5-8163f7c5fa07.jpg) ![Caso 3 np half](https://user-images.githubusercontent.com/69161061/90050519-4cd50e80-dca4-11ea-9d51-53a018b836f9.jpg) ![Caso 3 np longdouble](https://user-images.githubusercontent.com/69161061/90050521-4cd50e80-dca4-11ea-9bfb-644748cc71b3.jpg) ![Caso 3 np single](https://user-images.githubusercontent.com/69161061/90050523-4cd50e80-dca4-11ea-8933-6aef64ab8836.jpg)
 
++ Análisis de datos
+  + Analizando brevemente el desempeño según el tipo de datos, el mejor se encuentra para np.half, donde los tiempos de ejecución son considerablemente más bajos, siendo aproximadamente 0,15 segundos, cuando N = 2000. Para los demás el tiempo aumenta y está dentro de un rango de 0,40 y 0,50 segundos, para el N = 2000.
 
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
   + numpy.linalg.inv: por lo visto, creo que podría utilizar Cholesky debido a que es un poco más lento que con scipy y necesita de más memoria.
