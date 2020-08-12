@@ -89,6 +89,7 @@
     + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 3,8 GB lo cual equivalía a 4 matrices.
     + El desempeño es similar para el caso np.single y np.double. Para np.half y np.double, resultó que no eran compatibles con numpy.linalg.
     +  En el caso 1 se encuentra el rendimiento más bajo y menos óptimo, lo cual se evidencia en los tiempos de ejecución.
+    
   + Caso 2: scipy.linalg.inv con overwrite_a=False
     + El porcentaje en los procesadores fue ~55%, siendo este valor más alto que para en el caso 1, haciéndose uso de los 4 núcleos.
     + En cuanto a memoria, se calculó que para el caso N = 10.000 en particular se utilizaban más o menos 2,5 GB lo cual equivalía a 2 matrices.
@@ -103,5 +104,6 @@
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
   + numpy.linalg.inv:
   + scipy.linalg.inv:
+  
 + ¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)
 
