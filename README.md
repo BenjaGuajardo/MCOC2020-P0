@@ -101,6 +101,7 @@
 
 
 + ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?
-
+  + numpy.linalg.inv:
+  + scipy.linalg.inv:
 + ¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)
 
