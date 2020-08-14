@@ -20,11 +20,12 @@ def plotting(names):
         plt.xticks(ejex,ejex,rotation=45) #tamanos de matriz
         plt.yticks(ejey,ejey_labels) #tiempo en segundos
         plt.ylabel('Tiempo transcurrido')
+        plt.xlabel('Tamaño matriz N')
         plt.grid()
         
     plt.tight_layout()
     plt.legend()
-    plt.savefig('Entrega_5.jpg')
+    plt.savefig('Entrega_5.png')
     plt.show()
     
 plotting(names)
