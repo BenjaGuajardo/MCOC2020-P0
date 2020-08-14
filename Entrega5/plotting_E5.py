@@ -1,4 +1,4 @@
-from numpy import matrix
+import numpy as np
 from matplotlib import pyplot as plt
 
 names = ['A_invB_inv.txt', 'A_invB_npSolve.txt']

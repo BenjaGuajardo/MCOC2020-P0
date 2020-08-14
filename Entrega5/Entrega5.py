@@ -31,6 +31,7 @@ files = [open(name, 'w') for name in names]
 
 for N in Ns:
     
+    #arreglo con N filas y len(files) columnas
     dts = np.zeros((Ncorridas, len(files)))
     
     for i in range(Ncorridas):
@@ -43,7 +44,7 @@ for N in Ns:
         A_invB = A_inv@B
         t2 = perf_counter()
         dt = t2-t1
-        dts[i][0]=dt
+        dts[i][0]=dt #Agrega el dt a la respectiva fila de la primera columna
         
         #Mediante solver de numpy
         A = matriz_laplaciana(N,float32)
@@ -52,11 +53,12 @@ for N in Ns:
         A_invB = np.linalg.solve(A,B)
         t2 = perf_counter()
         dt = t2-t1
-        dts[i][1]=dt
+        dts[i][1]=dt #Agrega el dt a la respectiva fila de la segunda columna
     
-    #Tiempo promedio para cada calculo
-    dts_mean = [np.mean(dts[:][j]) for j in range(len(files))]
+    #Tiempo promedio de cada columna para cada calculo
+    dts_mean = [np.mean(dts[:,j]) for j in range(len(files))]
     
+    #Se escribe, en el archivo de texto, los promedios para cada nombre
     for j in range(len(files)):
         files[j].write(f'{N} {dts_mean[j]}\n')
         files[j].flush
