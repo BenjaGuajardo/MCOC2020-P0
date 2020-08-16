@@ -2,8 +2,8 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 names = ['A_invB_inv.txt', 'A_invB_npSolve.txt', 'A_invB_spSolve.txt',
-         'A_invB_spSolve_sym_pos.txt','A_invB_spSolve_overwrite.txt',
-         'A_invB_spSolve_sym_pos_overwrite.txt']
+         'A_invB_spSolve_symmetric.txt','A_invB_spSolve_pos.txt',
+         'A_invB_spSolve_pos_overwrite.txt']
 
 def plotting(names):
     

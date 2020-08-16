@@ -21,14 +21,14 @@ def matriz_laplaciana(N,dtype):
 
 Ns = [2,3,10,12,15,20,30,40,45,50,
       55,60,75,100,125,160,200,250,
-      350,500,600,800,1000,2000]
+      350,500,600,800,1000,2000,5000,10000]
 
 
-Ncorridas = 10
+Ncorridas = 5
 
 names = ['A_invB_inv.txt', 'A_invB_npSolve.txt', 'A_invB_spSolve.txt',
-         'A_invB_spSolve_sym_pos.txt','A_invB_spSolve_overwrite.txt',
-         'A_invB_spSolve_sym_pos_overwrite.txt']
+         'A_invB_spSolve_symmetric.txt','A_invB_spSolve_pos.txt',
+         'A_invB_spSolve_pos_overwrite.txt']
 
 files = [open(name, 'w') for name in names]
 
@@ -66,32 +66,33 @@ for N in Ns:
         dt = t2-t1
         dts[i][2]=dt
         
-        #scipy sym_pos=true
+        #scipy sym
         A = matriz_laplaciana(N,float32)
         B = np.ones(N)
         t1 = perf_counter()
-        A_invB = spLinalg.solve(A,B,sym_pos=True)
+        A_invB = spLinalg.solve(A,B,assume_a='sym')
         t2 = perf_counter()
         dt = t2-t1
         dts[i][3]=dt
         
-        #scipy overwrite_a
+        #scipy pos
         A = matriz_laplaciana(N,float32)
         B = np.ones(N)
         t1 = perf_counter()
-        A_invB = spLinalg.solve(A,B,overwrite_a=True)
+        A_invB = spLinalg.solve(A,B,assume_a='pos')
         t2 = perf_counter()
         dt = t2-t1
         dts[i][4]=dt   
         
-        #scipy sym_overwrite_a
+        #scipy pos_overwrite_a
         A = matriz_laplaciana(N,float32)
         B = np.ones(N)
         t1 = perf_counter()
-        A_invB = spLinalg.solve(A,B,sym_pos=True,overwrite_a=True)
+        A_invB = spLinalg.solve(A,B,assume_a='pos',overwrite_a=True)
         t2 = perf_counter()
         dt = t2-t1
         dts[i][5]=dt  
+
         
     #Tiempo promedio para cada calculo
     dts_mean = [np.mean(dts[:,j]) for j in range(len(files))]
