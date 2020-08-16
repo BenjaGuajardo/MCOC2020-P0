@@ -119,6 +119,14 @@
 
 ![Entrega_6](https://user-images.githubusercontent.com/69161061/90338054-e0645300-dfb4-11ea-8794-2aa200ed9495.png)
 
+  + Para medir el desempeño se realizaron 5 corridas para distintos N (desde 2 a 10000), donde se midió el tiempo que demoraba cada solver.
+  + Los solver utilizados para resolver el sistema A x = B son los siguientes:
+    + A_invB_inv: Invierte A mediante inv() y luego calcula x.
+    + npSolve: Solver de numpy.
+    spSolve: Solver de scipy que además presenta opciones para utilizar un solver específico.
+      + spSolve_sym: Para matrices simétricas.
+      + spSolve_pos: Para definidas positivas.
+      + spsolve_pos_overwrite: Permite sobrescribir la matriz a para una mejor performance.
 + Análisis
   + Inicialmente, para N = 2, se puede observar que el solver mas rapido es el de numpy, mientras que los otros metodos se encuentran relativamente cercanos en tiempo.
   + A medida que aumenta el N, entre N=10 y N=100, se puede notar que existen ciertos peaks. Lo anterior se puede asociar a que comienza a usarse un mayor porcentaje de  procesadores, lo cual explicaría las mejoras en el desempeño, disminuyendo los tiempos de ejecución.
