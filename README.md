@@ -123,7 +123,7 @@
   + Los solver utilizados para resolver el sistema A x = B son los siguientes:
     + A_invB_inv: Invierte A mediante inv() y luego calcula x.
     + npSolve: Solver de numpy.
-    spSolve: Solver de scipy que además presenta opciones para utilizar un solver específico.
+    + spSolve: Solver de scipy que además presenta opciones para utilizar un solver específico.
       + spSolve_sym: Para matrices simétricas.
       + spSolve_pos: Para definidas positivas.
       + spsolve_pos_overwrite: Permite sobrescribir la matriz a para una mejor performance.
