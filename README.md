@@ -116,7 +116,7 @@
   + En cuanto a los gráficos de desempeño el comportamiento de las curvas para los tres casos es bastante similar. Lo que sí se puede notar es que en el caso 2 es donde menos lineal es el comportamiento, existiendo un par de picks dentro del proceso.Viéndolo por la estructura de caché, pareciera ser que la memoria requerida para el segundo caso se alcanza más rápido y por eso se generan los picks, es decir, se comenzarían a ocupar los distintos niveles de caché antes que en los otros casos. Un punto de análisis sería ver por qué si en el caso 1 se ocupaba más memoria, entonces no tiene un comportamiento similar al visto en el caso 2. Probablemente el algoritmo o la función inv() de numpy se aleja más del bajo nivel y el desempeño no es óptimo, pero aún así no sabría decir realmente por qué si requiere de más memoria, entonces no presenta picks en los puntos en que se alcanza la memoria de los distintos niveles de caché. Algo tendrá relacionado el uso de los procesadores, ya que como mencioné en puntos anteriores, para el caso 1 es donde menor porcentaje se utilizó. El caso 3 es el que mejor comportamiento tiene y en esto podría estar más visible el paralelismo. Como se mostró anteriormente, para el caso 3 los 4 núcleos se encuentran trabajando, lo cual mejora mucho el desempeño del programa.
 
 ## Desempeño Ax = b
-+ Gráfico de rendimiento:
+
 ![Entrega_6](https://user-images.githubusercontent.com/69161061/90338054-e0645300-dfb4-11ea-8794-2aa200ed9495.png)
 
 + Análisis
