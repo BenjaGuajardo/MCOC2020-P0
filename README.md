@@ -134,22 +134,28 @@
 
 ## Matrices dispersas y complejidad computacional
 
-Comente las diferencias que ve en el comportamiento de los algoritmos en el caso de matrices llenas y dispersas.
-¿Cual parece la complejidad asintótica (para LaTeX: N\rightarrow\inftyN → ∞)  para el ensamblado y solución en ambos casos y porqué?
-¿Como afecta el tamaño de las matrices al comportamiento aparente?
++ ¿Como afecta el tamaño de las matrices al comportamiento aparente?
+
+  + Para los tres casos, el análisis es el mismo, la conplejidad computacional siempre es asintótica al N2. Lo que sí cambia, entre cada caso, es el tiempo que demora en ensamblar, el cual será analizado por separado para cada algoritmo.
+
 ¿Qué tan estables son las corridas (se parecen todas entre si siempre, nunca, en un rango)?
 
 + Complejidad algoritmica de MATMUL
 
 ![matmul_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800471-bc6d7e00-e2e2-11ea-8cdd-ad42f91710d8.png) ![matmul_matriz_llena](https://user-images.githubusercontent.com/69161061/90800474-bd061480-e2e2-11ea-82ef-9ebb6261793d.png)
-
-  + Complejidad asintótica
-    + Matriz llena
-      + Ensamblado = N2
-      + Solución = N3
-    + Matriz dispersa:
-      + Ensamblado = N2
-      + Solución = N3
+  + Ensamblado
+    + Complejidad asintótica
+      + Matriz llena = N2
+      + Matriz dispersa = N2
+    + El tiempo de ensamblado varía para cada matriz, siendo más rápido el ensamblado de la matriz llena. Para crear la matriz llena de dimensón NxN utilicé la función rand() de scipy, mientras que para la matriz dispersa utilicé random() de scipy.sparse. La diferencia en tiempo es muy grande, por ejemplo para el caso N = 8000, la matriz llena demoró aproximadamente 1.5s, mientras que la dispersa 7s. Para el caso "MATMUL" el N máximo fue 8000 debido a que con N = 16000 se superaba la memoria RAM. Otra observación es que el comportamiento asintótico de la matriz llena sucede primero, esto porque...
+    
+  + Solución
+      + Complejidad asintótica
+        + Matriz llena = N3
+        + Matriz dispersa = N3
+      + Para la solucion, en matrices dispersas la multiplicacion es mas rapida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solucion no cambia tanto en comparacion al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solucion sera mas grande.
+      + Tambien se puede observar que las corridas para matrices dispersas son estables y se parecen entre si, no asi para las llenas, que tienden a tener distintos desempeños en ciertos puntos 'criticos'
+  
 + Complejidad algoritmica de INV
 
 ![inv_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800463-b8d9f700-e2e2-11ea-8307-faa3e37f9a2f.png) ![inv_matriz_llena](https://user-images.githubusercontent.com/69161061/90800468-bbd4e780-e2e2-11ea-9a71-d2203f8e53c3.png)
