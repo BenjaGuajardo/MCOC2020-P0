@@ -131,3 +131,38 @@
   + Inicialmente, para N = 2, se puede observar que el solver mas rapido es el de numpy, mientras que los otros metodos se encuentran relativamente cercanos en tiempo.
   + A medida que aumenta el N, entre N=10 y N=100, se puede notar que existen ciertos peaks. Lo anterior se puede asociar a que comienza a usarse un mayor porcentaje de  procesadores, lo cual explicaría las mejoras en el desempeño, disminuyendo los tiempos de ejecución.
   + Ya para los N más grandes, se puede notar de mejor manera cual es el solver más eficiente y rápido. Como era de esperarse, A_invB_inv es por lejos el más lento, ya que no se está utilizando un solver sino que se utiliza el método de la invertida. Para el resto de los solvers, se puede notar que npSolve no sigue siendo el más rápido, como en un comienzo, pero presenta un desempeño similar a spSolve. En cuanto a los solvers de scipy, el desempeño también es el esperado, spSolve es el más lento, y cuando especificamos que A es simétrica y definida positiva, el rendimiento mejora. Lo anterior era lo esperado ya que al agregar estas especificaciones se optimiza el calculo, por ejemplo, cuando se señalamos que A es simetrica, el solver toma los valores del triangulo superior puesto que la matriz es simetrica. El solver más rápido es pos_overwrite, ya que con esto mejoramos la performance al permitir sobrescribir la matriz A.
+
+## Matrices dispersas y complejidad computacional
+
+Comente las diferencias que ve en el comportamiento de los algoritmos en el caso de matrices llenas y dispersas.
+¿Cual parece la complejidad asintótica (para LaTeX: N\rightarrow\inftyN → ∞)  para el ensamblado y solución en ambos casos y porqué?
+¿Como afecta el tamaño de las matrices al comportamiento aparente?
+¿Qué tan estables son las corridas (se parecen todas entre si siempre, nunca, en un rango)?
++ Complejidad algoritmica de MATMUL
+![matmul_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800471-bc6d7e00-e2e2-11ea-8cdd-ad42f91710d8.png) ![matmul_matriz_llena](https://user-images.githubusercontent.com/69161061/90800474-bd061480-e2e2-11ea-82ef-9ebb6261793d.png)
+  + Complejidad asintótica
+    + Matriz llena
+      + Ensamblado = N2
+      + Solución = N3
+    + Matriz dispersa:
+      + Ensamblado = N2
+      + Solución = N3
++ Complejidad algoritmica de INV
+![inv_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800463-b8d9f700-e2e2-11ea-8307-faa3e37f9a2f.png) ![inv_matriz_llena](https://user-images.githubusercontent.com/69161061/90800468-bbd4e780-e2e2-11ea-9a71-d2203f8e53c3.png)
+  + Complejidad asintótica
+    + Matriz llena
+      + Ensamblado = N2
+      + Solución = N3
+    + Matriz dispersa:
+      + Ensamblado = N2
+      + Solución = N3
+
++ Complejidad algoritmica de SOLVE
+![solver_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800477-bd9eab00-e2e2-11ea-944a-36c01952daa5.png) ![solver_matriz_llena](https://user-images.githubusercontent.com/69161061/90800479-becfd800-e2e2-11ea-9b07-2c2e906ccd42.png)
+  + Complejidad asintótica
+    + Matriz llena
+      + Ensamblado = N2
+      + Solución = N3
+    + Matriz dispersa:
+      + Ensamblado = N2
+      + Solución = N
