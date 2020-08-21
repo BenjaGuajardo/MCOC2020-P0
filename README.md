@@ -155,19 +155,25 @@
         + Matriz dispersa = N3
       + Para la solucion, en matrices dispersas la multiplicacion es mas rapida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solucion no cambia tanto en comparacion al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solucion sera mas grande.
       + Tambien se puede observar que las corridas son relativamente estables, a excepcion de los primeros N.
-      + El comportamiento asintótico que tienen ambas matrices con "O(N2)" implica que si aumentamos el N de la matriz, el calculo demorará el cuadrado de tiempo.
+  + El comportamiento asintótico que tienen ambas matrices con "O(N3) implica que si duplicamos el N de la matriz, el tiempo de la solucion sera el cubo de este.
   
 + Complejidad algoritmica de INV
 
 ![inv_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800463-b8d9f700-e2e2-11ea-8307-faa3e37f9a2f.png) ![inv_matriz_llena](https://user-images.githubusercontent.com/69161061/90800468-bbd4e780-e2e2-11ea-9a71-d2203f8e53c3.png)
 
-  + Complejidad asintótica
-    + Matriz llena
-      + Ensamblado = N2
-      + Solución = N3
-    + Matriz dispersa:
-      + Ensamblado = N2
-      + Solución = N3
+  + Ensamblado
+    + Complejidad asintótica
+      + Matriz llena = N2
+      + Matriz dispersa = N2
+    + El tiempo de ensamblado es similar para ambos casos, la unica diferencia que se puede notar es que el comportamiento asintotico ocurre primero en el caso de la matriz llena, es decir, para la matriz dispersa el tiempo de ensamblado es mas bien lineal para los primeros valores de N, no así la matriz llena ya que su comportamiento es asintotico al N2 desde un principio.
+    
+  + Solución
+      + Complejidad asintótica
+        + Matriz llena = N3
+        + Matriz dispersa = N3
+      + Para la solucion, en matrices dispersas el cálculo de la inversa es mas rápido. Además, la complejidad asintótica en matrices dispersas es más bien lineal hasta aproximadamente el N = 5000. Lo anterior significa que, a medida que duplicamos el tamaño de la matriz, el tiempo de solución se comporta de manera lineal, mientras que para las matrices llenas, el tiempo se cuadruplica.
+      + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí. En matrices llenas, en el rango N(2,100), las corridas son inestables muchas variaciones.
+      + En cuanto a la comlejidad, en dispersas se puede notar, nuevamente, un comportamiento lineal durante la mayor parte de la corrida, que cercano al N = 5000 comienza a acercarse asintóticamente al O($N^{2}$).
 
 + Complejidad algoritmica de SOLVE
 
