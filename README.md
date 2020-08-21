@@ -147,14 +147,15 @@
     + Complejidad asintótica
       + Matriz llena = N2
       + Matriz dispersa = N2
-    + El tiempo de ensamblado varía para cada matriz, siendo más rápido el ensamblado de la matriz llena. Para crear la matriz llena de dimensón NxN utilicé la función rand() de scipy, mientras que para la matriz dispersa utilicé random() de scipy.sparse. La diferencia en tiempo es muy grande, por ejemplo para el caso N = 8000, la matriz llena demoró aproximadamente 1.5s, mientras que la dispersa 7s. Para el caso "MATMUL" el N máximo fue 8000 debido a que con N = 16000 se superaba la memoria RAM. Otra observación es que el comportamiento asintótico de la matriz llena sucede primero, esto porque...
+    + El tiempo de ensamblado varía para cada matriz, siendo más rápido el ensamblado de la matriz llena. Para crear la matriz llena de dimensón NxN utilicé la función rand() de scipy, mientras que para la matriz dispersa utilicé random() de scipy.sparse. La diferencia en tiempo es muy grande, por ejemplo para el caso N = 8000, la matriz llena demoró aproximadamente 1.5s, mientras que la dispersa 7s. Para el caso "MATMUL" el N máximo fue 8000 debido a que con N = 16000 se superaba la memoria RAM. Otra observación es que el comportamiento asintótico que tienen ambas matrices con "O(N2)", lo cual significa que si aumentamos el N de la matriz, el ensamblaje demorará el cuadrado de tiempo.
     
   + Solución
       + Complejidad asintótica
         + Matriz llena = N3
         + Matriz dispersa = N3
       + Para la solucion, en matrices dispersas la multiplicacion es mas rapida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solucion no cambia tanto en comparacion al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solucion sera mas grande.
-      + Tambien se puede observar que las corridas para matrices dispersas son estables y se parecen entre si, no asi para las llenas, que tienden a tener distintos desempeños en ciertos puntos 'criticos'
+      + Tambien se puede observar que las corridas son relativamente estables, a excepcion de los primeros N.
+      + El comportamiento asintótico que tienen ambas matrices con "O(N2)" implica que si aumentamos el N de la matriz, el calculo demorará el cuadrado de tiempo.
   
 + Complejidad algoritmica de INV
 
@@ -179,3 +180,34 @@
     + Matriz dispersa:
       + Ensamblado = N2
       + Solución = N
+
++ Matriz Laplaciana
+```
+from numpy import zeros,double
+from scipy.sparse import lil_matrix, csr_matrix, csc_matrix
+
+def matriz_laplaciana_llena(N):
+    A = zeros((N,N),dtype=double)
+    for i in range(N):
+        for j in range(N):
+            if i==j:
+                A[i,j]=2
+            if i+1==j:
+                A[i,j]=-1
+            if i-1==j:
+                A[i,j]=-1       
+    return A
+
+def matriz_laplaciana_dispersa(N):
+    A_lil = lil_matrix((N,N),dtype=double) 
+    for i in range(N):
+        for j in range(N):
+            if i==j:
+                A_lil[i,j]=2
+            if i+1==j:
+                A_lil[i,j]=-1
+            if i-1==j:
+                A_lil[i,j]=-1
+    A = csr_matrix(A_lil)
+    return A
+```
