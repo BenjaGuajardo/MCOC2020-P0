@@ -173,19 +173,28 @@
         + Matriz dispersa = N3
       + Para la solucion, en matrices dispersas el cálculo de la inversa es mas rápido. Además, la complejidad asintótica en matrices dispersas es más bien lineal hasta aproximadamente el N = 5000. Lo anterior significa que, a medida que duplicamos el tamaño de la matriz, el tiempo de solución se comporta de manera lineal, mientras que para las matrices llenas, el tiempo se cuadruplica.
       + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí. En matrices llenas, en el rango N(2,100), las corridas son inestables muchas variaciones.
-      + En cuanto a la comlejidad, en dispersas se puede notar, nuevamente, un comportamiento lineal durante la mayor parte de la corrida, que cercano al N = 5000 comienza a acercarse asintóticamente al O($N^{2}$).
+      + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento lineal durante la mayor parte de la corrida, que cercana al N = 5000 comienza a acercarse asintóticamente al O(N2). Esto refleja que el caso de matrices dispersas tiene un mejor desempeño, y es básicamente porque al invertir matrices con tantos ceros, la matriz dispersa se evita todos esos cálculos innecesesarios que el caso de matriz llena sí realiza. Por el otro lado, la matriz llena se acerca a la complejidad N2 desde un principio, llegando finalmente a un tiempo final mucho mayor que en el caso de las dispersas.
+      + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csc_matrix para un mejor desempeño.
 
 + Complejidad algoritmica de SOLVE
 
 ![solver_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800477-bd9eab00-e2e2-11ea-944a-36c01952daa5.png) ![solver_matriz_llena](https://user-images.githubusercontent.com/69161061/90800479-becfd800-e2e2-11ea-9b07-2c2e906ccd42.png)
 
++ Ensamblado
   + Complejidad asintótica
-    + Matriz llena
-      + Ensamblado = N2
-      + Solución = N3
-    + Matriz dispersa:
-      + Ensamblado = N2
-      + Solución = N
+    + Matriz llena = N2
+    + Matriz dispersa = N2
+  + El desempeño es prácticamente el mismo para ambos casos, tanto en complejidad asintótica, tiempo de ensamblado y estabilidad de las corridas. Existen pequeñas diferencias entre ambos casos para los primeros N en cuanto a estabilidad y tiempo, pero ya pasado el N = 50, el desempeño es similar.
+    
+  + Solución
+    + Complejidad asintótica
+      + Matriz llena = N
+      + Matriz dispersa = N3
+    + Aquí es donde mejor se notan las diferencia en desempeño. Inmediatamente se puede observar que el tiempo de solución es demasiado inferior para matrices dispersas (~10 ms para dispersas y ~1 min en llenas) en el caso mas extremo (N = 16000). Este resultado es esperable ya que al ser matrices lagrangianas, la cantidad de ceros que hay en las matrices es muy grande, y las matrices dispersas evitan todos los cálculos que involucran estos ceros.
+    + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí, mientras que las matrices llenas presentan inestabilidad en los N < 500.
+    + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento casi constante en la mayor parte de la corrida, tendiendo finalmente a una complejidad lineal. Lo anterior significa que el tiempo de solución, en gran parte de la corrida no se ve afectado por el tamaño de la matriz y que gracias a las matrices dispersas se podría continuar realizando sistemas con N mucho mayores, que en caso de matrices llenas, probablemente no serían factibles y sobrepasarían la memoria.
+    + Claramente este es el caso que mejor refleja el buen desempeño que se obtiene al utilizar matrices dispersas.
+    + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csr_matrix para un mejor desempeño.
 
 + Matriz Laplaciana
 ```
