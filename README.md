@@ -187,8 +187,12 @@
   + Aquí es donde mejor se notan las diferencia en desempeño. Inmediatamente se puede observar que el tiempo de solución es demasiado inferior para matrices dispersas (~10 ms para dispersas y ~1 min en llenas) en el caso mas extremo (N = 16000). Este resultado es esperable ya que al ser matrices lagrangianas, la cantidad de ceros que hay en las matrices es muy grande, y las matrices dispersas evitan todos los cálculos que involucran estos ceros.
   + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí, mientras que las matrices llenas presentan inestabilidad en los N < 500.
   + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento casi constante en la mayor parte de la corrida, tendiendo finalmente a una complejidad lineal. Lo anterior significa que el tiempo de solución, en gran parte de la corrida no se ve afectado por el tamaño de la matriz y que gracias a las matrices dispersas se podría continuar realizando sistemas con N mucho mayores, que en caso de matrices llenas, probablemente no serían factibles y sobrepasarían la memoria.
-  + Claramente este es el caso que mejor refleja el buen desempeño que se obtiene al utilizar matrices dispersas.
   + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csr_matrix para un mejor desempeño.
+
++ Conclusión
+  + En conclusión, parece ser que le ensamblado de las martices sólo se ve afectado en MATMUL, debido a la función random() de scipy.sparse, pero en los demás casos, el tiempo armado de la matriz no se ve afectado.
+  + En cuanto a las soluciones, claramente el tamaño de la matriz afecta el comportamiento en el caso de matriz llena, puesto que las corridas tienen una complejidad asintótica muy marcada desde un principio, a diferencia de las matrices dispersas, que por gran parte de la corrida tienen una complejidad de un orden menor, respecto de las matrices llenas, por lo que el tamaño de la matriz no afecta de gran manera.
+  + Finalmente, habiendo analizado los casos, es claro el buen desempeño que se obtiene al utilizar matrices dispersas.
 
 + Matriz Laplaciana
 ```
