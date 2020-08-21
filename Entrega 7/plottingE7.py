@@ -35,25 +35,16 @@ for name in names:
 plt.subplot(2,1,1)
 
 plt.hlines(dts1[13],0,16000,colors='b',linestyle='--',color='dodgerblue')#cambiar numero por matmul +1 y 16000
+    
+a1 = dts1[13]/(16000)
+a2 = dts1[13]/(16000**2)
+a3 = dts1[13]/(16000**3)
+a4 = dts1[13]/(16000**4)
 
-exp = [1,0.5,1/3,0.25]
-data = dts1[13]#cambiar numero por matmul +1
-L = []
-
-for i in exp:
-    data = data**i
-    datos = []
-    for i in range(14):#cambiar numero por matmul +1
-        datos.append(data)
-        data = data/2
-    datos.sort()
-    L.append(datos)
-    data = dts1[13]#cambiar numero por matmul +1
-
-plt.loglog(N,np.array(L[0]),'--',color='darkorange')
-plt.loglog(N,np.array(L[1])**2,'--',color='limegreen')
-plt.loglog(N,np.array(L[2])**3,'--',color='crimson')
-plt.loglog(N,np.array(L[3])**4,'--',color='mediumpurple')
+plt.loglog(N,a1*N,'--',color='darkorange')
+plt.loglog(N,a2*N**2,'--',color='limegreen')
+plt.loglog(N,a3*N**3,'--',color='crimson')
+plt.loglog(N,a4*N**4,'--',color='mediumpurple')
 
 ejex=[10,20,50,100,200,500,1000,2000,5000,10000,20000]
 ejey=[0.0001,0.001,0.01,0.1,1,10,60,600]
@@ -69,24 +60,15 @@ plt.subplot(2,1,2)
 
 plt.hlines(dts2[13],0,16000,colors='b',linestyle='--', color='dodgerblue', label = 'Constante')#cambiar numero por matmul +1 y 16000
 
-exp = [1,0.5,1/3,0.25]
-data = dts2[13]#cambiar numero por matmul +1
-L = []
+b1 = dts2[13]/(16000)
+b2 = dts2[13]/(16000**2)
+b3 = dts2[13]/(16000**3)
+b4 = dts2[13]/(16000**4)
 
-for i in exp:
-    data = data**i
-    datos = []
-    for i in range(14): #cambiar numero por matmul +1
-        datos.append(data)
-        data = data/2
-    datos.sort()
-    L.append(datos)
-    data = dts2[13]#cambiar numero por matmul +1
-
-plt.loglog(N,np.array(L[0]),linestyle='--',color='darkorange', label = '$O(N)$')
-plt.loglog(N,np.array(L[1])**2,linestyle='--',color='limegreen', label = '$O(N{})$'.format(unicode_exp(2)))
-plt.loglog(N,np.array(L[2])**3,linestyle='--',color='crimson', label = '$O(N{})$'.format(unicode_exp(3)))
-plt.loglog(N,np.array(L[3])**4,linestyle='--',color='mediumpurple', label = '$O(N{})$'.format(unicode_exp(4)))
+plt.loglog(N,b1*N,linestyle='--',color='darkorange', label = '$O(N)$')
+plt.loglog(N,b2*N**2,linestyle='--',color='limegreen', label = '$O(N{})$'.format(unicode_exp(2)))
+plt.loglog(N,b3*N**3,linestyle='--',color='crimson', label = '$O(N{})$'.format(unicode_exp(3)))
+plt.loglog(N,b4*N**4,linestyle='--',color='mediumpurple', label = '$O(N{})$'.format(unicode_exp(4)))
 
 plt.legend(loc=2)
 
