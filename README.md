@@ -134,12 +134,6 @@
 
 ## Matrices dispersas y complejidad computacional
 
-+ ¿Como afecta el tamaño de las matrices al comportamiento aparente?
-
-  + Para los tres casos, el análisis es el mismo, la conplejidad computacional siempre es asintótica al N2. Lo que sí cambia, entre cada caso, es el tiempo que demora en ensamblar, el cual será analizado por separado para cada algoritmo.
-
-¿Qué tan estables son las corridas (se parecen todas entre si siempre, nunca, en un rango)?
-
 + Complejidad algoritmica de MATMUL
 
 ![matmul_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800471-bc6d7e00-e2e2-11ea-8cdd-ad42f91710d8.png) ![matmul_matriz_llena](https://user-images.githubusercontent.com/69161061/90800474-bd061480-e2e2-11ea-82ef-9ebb6261793d.png)
