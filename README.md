@@ -167,8 +167,8 @@
         + Matriz llena = N3
         + Matriz dispersa = N3
       + Para la solución, en matrices dispersas el cálculo de la inversa es mas rápido. Además, la complejidad asintótica en matrices dispersas es más bien lineal hasta aproximadamente el N = 5000. Lo anterior significa que, a medida que duplicamos el tamaño de la matriz, el tiempo de solución se comporta de manera lineal, mientras que para las matrices llenas, el tiempo se cuadruplica.
-      + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí. En matrices llenas, en el rango N(2,100), las corridas son inestables muchas variaciones.
-      + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento lineal durante la mayor parte de la corrida, que cercana al N = 5000 comienza a acercarse asintóticamente al O(N2). Esto refleja que el caso de matrices dispersas tiene un mejor desempeño, y es básicamente porque al invertir matrices con tantos ceros, la matriz dispersa se evita todos esos cálculos innecesesarios que el caso de matriz llena sí realiza. Por el otro lado, la matriz llena se acerca a la complejidad N2 desde un principio, llegando finalmente a un tiempo final mucho mayor que en el caso de las dispersas.
+      + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí. En matrices llenas, en el rango N(2,100), las corridas son inestables y con muchas variaciones.
+      + En cuanto a la complejidad, en dispersas se puede notar un comportamiento lineal durante la mayor parte de la corrida, que cercana al N = 5000 comienza a acercarse asintóticamente al O(N2). Lo anterior refleja que el caso de matrices dispersas tiene un mejor desempeño, y es básicamente porque al invertir matrices con tantos ceros, la matriz dispersa se evita todos esos cálculos innecesesarios que el caso de matriz llena sí realiza. Por el otro lado, la matriz llena se acerca a la complejidad N2 desde un principio, llegando finalmente a un tiempo final mucho mayor que en el caso de las dispersas.
       + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csc_matrix para un mejor desempeño.
 
 + Complejidad algoritmica de SOLVE
@@ -193,6 +193,7 @@
 + Conclusión
   + Parece ser que el ensamblado de las martices no depende del tipo de matriz, sino que es atribuible al código de ensamblaje.
   + En cuanto a las soluciones, claramente el tamaño de la matriz afecta el comportamiento en el caso de matriz llena, puesto que las corridas tienen una complejidad asintótica muy marcada desde un principio, a diferencia de las matrices dispersas, que por gran parte de la corrida tienen una complejidad de un orden menor, respecto de las matrices llenas, por lo que el tamaño de la matriz no afecta de gran manera y es posible hacer cálculos con Ns superiores, en menos tiempo.
+  + Se pudo observar que en los casos 'MATMUL' y 'SOLVER', las diferencias son muy grandes entre matrices dispersas y llenas, pero en el caso 'INV' podría decirse que se parecen un poco más, aunque las dispersas siguen teniendo un mejor desempeño. Lo anterior se puede deber a que para invertit matrices, independiente de la cantidad de ceros, el algoritmo requiere más tiempo y presenta una mayor complejidad.
   + Finalmente, habiendo analizado los casos, es claro que el mejor desempeño se obtiene al utilizar matrices dispersas.
 
 + Matriz Laplaciana
