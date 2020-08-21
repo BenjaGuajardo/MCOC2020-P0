@@ -150,7 +150,7 @@
         + Matriz dispersa = N3
       + Para la solución, en matrices dispersas la multiplicacion es mas rápida y la diferencia es notoria. Lo anterior es porque cuando la matriz presenta una gran cantidad de ceros, como es el caso de las matrices lagrangianas, el tiempo de solución en matrices dispersas disminuye drásticamente en comparación al de una matriz llena, lo cual se debe a que al utilizar matrices dispersas, se evitan los cáclulos que involucran los ceros.
       + En cuanto al uso de memoria, las matrices dispersas permiten realizar cálculos con N mucho mayores gracias a que no ocupa la memoria en guardar la matriz NxN, como es el caso de las matrices llenas, por esto mismo es que en el caso de la matriz llena sólo pude realizar el cálculo hasta N = 8000.
-  + El comportamiento asintótico N que tiene el caso disperso, refleja la complejidad del algoritmo que sólo multiplica los valores que no son 0, además gracias a esto  es posible realizar el cálculo en matrices de dimensiones mucho mayores. El caso de matriz llena, multiplica las matrices coeficiente por coeficiente, lo cual claramente requiere más memoria y tiempo, y esto se ve reflejado en la comlpejidad asintótica O(N3)
+      + El comportamiento asintótico N que tiene el caso disperso, refleja la complejidad del algoritmo que sólo multiplica los valores que no son 0, además gracias a esto  es posible realizar el cálculo en matrices de dimensiones mucho mayores. El caso de matriz llena, multiplica las matrices coeficiente por coeficiente, lo cual claramente requiere más memoria y tiempo, y esto se ve reflejado en la comlpejidad asintótica O(N3)
   
 + Complejidad algoritmica de INV
 
