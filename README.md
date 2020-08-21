@@ -136,24 +136,25 @@
 
 + Complejidad algoritmica de MATMUL
 
-![matmul_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800471-bc6d7e00-e2e2-11ea-8cdd-ad42f91710d8.png) ![matmul_matriz_llena](https://user-images.githubusercontent.com/69161061/90800474-bd061480-e2e2-11ea-82ef-9ebb6261793d.png)
+![matmul_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90911063-6bbf5900-e3a6-11ea-8830-baabb35babf5.png)![matmul_matriz_llena](https://user-images.githubusercontent.com/69161061/90911077-6f52e000-e3a6-11ea-974b-850558f104ec.png)
+  
   + Ensamblado
     + Complejidad asintótica
       + Matriz llena = N2
       + Matriz dispersa = N2
-    + El tiempo de ensamblado varía para cada matriz, siendo más rápido el ensamblado de la matriz llena. Para crear la matriz llena de dimensón NxN utilicé la función rand() de scipy, mientras que para la matriz dispersa utilicé random() de scipy.sparse. La diferencia en tiempo es muy grande, por ejemplo para el caso N = 8000, la matriz llena demoró aproximadamente 1.5s, mientras que la dispersa 7s. Para el caso "MATMUL" el N máximo fue 8000 debido a que con N = 16000 se superaba la memoria RAM. Otra observación es que el comportamiento asintótico que tienen ambas matrices con "O(N2)", lo cual significa que si aumentamos el N de la matriz, el ensamblaje demorará el cuadrado de tiempo.
+    + El tiempo de ensamblado no varía notoriamente para cada caso, pero en los primeros N se puede notar una mayor estabilidad en el caso de las matrices dispersas. Para el caso "MATMUL" el N máximo fue 8000 debido a que con N = 16000 se superaba la memoria RAM. Otra observación es que el comportamiento asintótico que tienen ambas matrices con "O(N2)", lo cual significa que si aumentamos el N de la matriz, el ensamblaje demorará el cuadrado de tiempo.
     
   + Solución
       + Complejidad asintótica
-        + Matriz llena = N3
+        + Matriz llena = N
         + Matriz dispersa = N3
-      + Para la solución, en matrices dispersas la multiplicacion es mas rápida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solución no cambia tanto en comparación al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solución entre dispersas y llenas será más grande.
-      + También se puede observar que las corridas son relativamente estables, a excepción de los primeros N.
-  + El comportamiento asintótico que tienen ambas matrices con "O(N3)" implica que si duplicamos el N de la matriz, el tiempo de la solución sera el cubo de este.
+      + Para la solución, en matrices dispersas la multiplicacion es mas rápida y la diferencia es notoria. Lo anterior es porque cuando la matriz presenta una gran cantidad de ceros, como es el caso de las matrices lagrangianas, el tiempo de solución en matrices dispersas disminuye drásticamente en comparación al de una matriz llena, lo cual se debe a que al utilizar matrices dispersas, se evitan los cáclulos que involucran los ceros.
+      + En cuanto al uso de memoria, las matrices dispersas permiten realizar cálculos con N mucho mayores gracias a que no ocupa la memoria en guardar la matriz NxN, como es el caso de las matrices llenas, por esto mismo es que en el caso de la matriz llena sólo se puedo realizar el cálculo hasta N = 8000.
+  + El comportamiento asintótico que tiene el caso disperso, refleja cómo no se ve afectado el cálculo por el tamaño de la matriz, teniendo en la mayor parte de la corrida una complejidad casi constante. Ya cuando se llega a N = 16000, se comienza a observar la complejidad lineal.
   
 + Complejidad algoritmica de INV
 
-![inv_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800463-b8d9f700-e2e2-11ea-8307-faa3e37f9a2f.png) ![inv_matriz_llena](https://user-images.githubusercontent.com/69161061/90800468-bbd4e780-e2e2-11ea-9a71-d2203f8e53c3.png)
+![inv_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800463-b8d9f700-e2e2-11ea-8307-faa3e37f9a2f.png)![inv_matriz_llena](https://user-images.githubusercontent.com/69161061/90800468-bbd4e780-e2e2-11ea-9a71-d2203f8e53c3.png)
 
   + Ensamblado
     + Complejidad asintótica
@@ -165,14 +166,14 @@
       + Complejidad asintótica
         + Matriz llena = N3
         + Matriz dispersa = N3
-      + Para la solucion, en matrices dispersas el cálculo de la inversa es mas rápido. Además, la complejidad asintótica en matrices dispersas es más bien lineal hasta aproximadamente el N = 5000. Lo anterior significa que, a medida que duplicamos el tamaño de la matriz, el tiempo de solución se comporta de manera lineal, mientras que para las matrices llenas, el tiempo se cuadruplica.
+      + Para la solución, en matrices dispersas el cálculo de la inversa es mas rápido. Además, la complejidad asintótica en matrices dispersas es más bien lineal hasta aproximadamente el N = 5000. Lo anterior significa que, a medida que duplicamos el tamaño de la matriz, el tiempo de solución se comporta de manera lineal, mientras que para las matrices llenas, el tiempo se cuadruplica.
       + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí. En matrices llenas, en el rango N(2,100), las corridas son inestables muchas variaciones.
       + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento lineal durante la mayor parte de la corrida, que cercana al N = 5000 comienza a acercarse asintóticamente al O(N2). Esto refleja que el caso de matrices dispersas tiene un mejor desempeño, y es básicamente porque al invertir matrices con tantos ceros, la matriz dispersa se evita todos esos cálculos innecesesarios que el caso de matriz llena sí realiza. Por el otro lado, la matriz llena se acerca a la complejidad N2 desde un principio, llegando finalmente a un tiempo final mucho mayor que en el caso de las dispersas.
       + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csc_matrix para un mejor desempeño.
 
 + Complejidad algoritmica de SOLVE
 
-![solver_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800477-bd9eab00-e2e2-11ea-944a-36c01952daa5.png) ![solver_matriz_llena](https://user-images.githubusercontent.com/69161061/90800479-becfd800-e2e2-11ea-9b07-2c2e906ccd42.png)
+![solver_matriz_dispersa](https://user-images.githubusercontent.com/69161061/90800477-bd9eab00-e2e2-11ea-944a-36c01952daa5.png)![solver_matriz_llena](https://user-images.githubusercontent.com/69161061/90800479-becfd800-e2e2-11ea-9b07-2c2e906ccd42.png)
 
 + Ensamblado
   + Complejidad asintótica
@@ -184,17 +185,19 @@
   + Complejidad asintótica
     + Matriz llena = N
     + Matriz dispersa = N3
-  + Aquí es donde mejor se notan las diferencia en desempeño. Inmediatamente se puede observar que el tiempo de solución es demasiado inferior para matrices dispersas (~10 ms para dispersas y ~1 min en llenas) en el caso mas extremo (N = 16000). Este resultado es esperable ya que al ser matrices lagrangianas, la cantidad de ceros que hay en las matrices es muy grande, y las matrices dispersas evitan todos los cálculos que involucran estos ceros.
+  + Inmediatamente se puede observar que el tiempo de solución es demasiado inferior para matrices dispersas (~10 ms para dispersas y ~1 min en llenas) en el caso mas extremo (N = 16000). Este resultado es esperable ya que al ser matrices lagrangianas, la cantidad de ceros que hay en las matrices es muy grande, y las matrices dispersas evitan todos los cálculos que involucran estos ceros.
   + Tambien se puede observar que las corridas son más estables en matrices dispersas y se parecen entre sí, mientras que las matrices llenas presentan inestabilidad en los N < 500.
   + En cuanto a la comlejidad, en dispersas se puede notar un comportamiento casi constante en la mayor parte de la corrida, tendiendo finalmente a una complejidad lineal. Lo anterior significa que el tiempo de solución, en gran parte de la corrida no se ve afectado por el tamaño de la matriz y que gracias a las matrices dispersas se podría continuar realizando sistemas con N mucho mayores, que en caso de matrices llenas, probablemente no serían factibles y sobrepasarían la memoria.
   + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csr_matrix para un mejor desempeño.
 
 + Conclusión
-  + En conclusión, parece ser que el ensamblado de las martices sólo se ve afectado en MATMUL, debido a la función random() de scipy.sparse, pero en los demás casos no es así.
-  + En cuanto a las soluciones, claramente el tamaño de la matriz afecta el comportamiento en el caso de matriz llena, puesto que las corridas tienen una complejidad asintótica muy marcada desde un principio, a diferencia de las matrices dispersas, que por gran parte de la corrida tienen una complejidad de un orden menor, respecto de las matrices llenas, por lo que el tamaño de la matriz no afecta de gran manera.
-  + Finalmente, habiendo analizado los casos, es claro el mejor desempeño se obtiene al utilizar matrices dispersas.
+  + Parece ser que el ensamblado de las martices no depende del tipo de matriz, sino que es atribuible al código de ensamblaje.
+  + En cuanto a las soluciones, claramente el tamaño de la matriz afecta el comportamiento en el caso de matriz llena, puesto que las corridas tienen una complejidad asintótica muy marcada desde un principio, a diferencia de las matrices dispersas, que por gran parte de la corrida tienen una complejidad de un orden menor, respecto de las matrices llenas, por lo que el tamaño de la matriz no afecta de gran manera y es posible hacer cálculos con Ns superiores, en menos tiempo.
+  + Finalmente, habiendo analizado los casos, es claro que el mejor desempeño se obtiene al utilizar matrices dispersas.
 
 + Matriz Laplaciana
+
+  + El código de ensamblaje de matri laplaciana, para el caso de matriz llena y dispersa, es el siguiente:
 ```
 from numpy import zeros,double
 from scipy.sparse import lil_matrix, csr_matrix, csc_matrix
@@ -224,3 +227,4 @@ def matriz_laplaciana_dispersa(N):
     A = csr_matrix(A_lil)
     return A
 ```
+  + Cómo se vio en clases, esta forma no es la con mejor desempeño ya que el tiempo de ensamblaje depende directamente de estas funciones. Para matrices llenas y dispersas los tiempos fueron similares y probablemente con otro código más eficiente, los tiempos se verían reducidos. El hecho de tener ciclos 'for' indentados y que se recorra toda la matriz para formarla, hace que el ensamblado sea más lento. Una opción sería ocupar la función eye() para así evitar recorrer completamente las matrices.
