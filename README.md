@@ -147,9 +147,9 @@
       + Complejidad asintótica
         + Matriz llena = N3
         + Matriz dispersa = N3
-      + Para la solucion, en matrices dispersas la multiplicacion es mas rapida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solucion no cambia tanto en comparacion al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solucion sera mas grande.
-      + Tambien se puede observar que las corridas son relativamente estables, a excepcion de los primeros N.
-  + El comportamiento asintótico que tienen ambas matrices con "O(N3) implica que si duplicamos el N de la matriz, el tiempo de la solucion sera el cubo de este.
+      + Para la solución, en matrices dispersas la multiplicacion es mas rápida, aunque la diferencia no es tan notoria. Lo anterior es porque cuando la matriz no presenta una gran cantidad de ceros, como en matrices lagrangianas por ejemplo, el tiempo de solución no cambia tanto en comparación al de una matriz llena. Probablemente si multiplicamos matrices lagrangianas, la diferencia en el tiempo de solución entre dispersas y llenas será más grande.
+      + También se puede observar que las corridas son relativamente estables, a excepción de los primeros N.
+  + El comportamiento asintótico que tienen ambas matrices con "O(N3)" implica que si duplicamos el N de la matriz, el tiempo de la solución sera el cubo de este.
   
 + Complejidad algoritmica de INV
 
@@ -159,7 +159,7 @@
     + Complejidad asintótica
       + Matriz llena = N2
       + Matriz dispersa = N2
-    + El tiempo de ensamblado es similar para ambos casos, la unica diferencia que se puede notar es que el comportamiento asintotico ocurre primero en el caso de la matriz llena, es decir, para la matriz dispersa el tiempo de ensamblado es mas bien lineal para los primeros valores de N, no así la matriz llena ya que su comportamiento es asintotico al N2 desde un principio.
+    + El tiempo de ensamblado es similar para ambos casos, la única diferencia que se puede notar es que el comportamiento asintótico ocurre primero en el caso de la matriz llena, es decir, para la matriz dispersa el tiempo de ensamblado es más bien lineal para los primeros valores de N, no así la matriz llena ya que su comportamiento es asintótico a O(N2) desde un principio.
     
   + Solución
       + Complejidad asintótica
@@ -190,9 +190,9 @@
   + Cabe destacar que para el cálculo de la inversa en matrices dispersas, se utilizó csr_matrix para un mejor desempeño.
 
 + Conclusión
-  + En conclusión, parece ser que le ensamblado de las martices sólo se ve afectado en MATMUL, debido a la función random() de scipy.sparse, pero en los demás casos, el tiempo armado de la matriz no se ve afectado.
+  + En conclusión, parece ser que el ensamblado de las martices sólo se ve afectado en MATMUL, debido a la función random() de scipy.sparse, pero en los demás casos no es así.
   + En cuanto a las soluciones, claramente el tamaño de la matriz afecta el comportamiento en el caso de matriz llena, puesto que las corridas tienen una complejidad asintótica muy marcada desde un principio, a diferencia de las matrices dispersas, que por gran parte de la corrida tienen una complejidad de un orden menor, respecto de las matrices llenas, por lo que el tamaño de la matriz no afecta de gran manera.
-  + Finalmente, habiendo analizado los casos, es claro el buen desempeño que se obtiene al utilizar matrices dispersas.
+  + Finalmente, habiendo analizado los casos, es claro el mejor desempeño se obtiene al utilizar matrices dispersas.
 
 + Matriz Laplaciana
 ```
