@@ -1,6 +1,6 @@
 from time import perf_counter
-from scipy import rand, matmul
-from numpy import double
+from scipy import matmul
+from Funciones import matriz_laplaciana_llena
 
 Ns = [2,4,8,15,30,60,125,250,500,1000,2000,4000,8000]
 
@@ -19,10 +19,8 @@ for corrida in range(Ncorridas):
         
         t1 = perf_counter()
         
-        A = rand(N,N)
-        A = double(A)
-        B = rand(N,N)
-        B = double(B)
+        A = matriz_laplaciana_llena(N)
+        B = matriz_laplaciana_llena(N)
         
         t2 = perf_counter()
 

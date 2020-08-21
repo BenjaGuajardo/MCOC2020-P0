@@ -1,9 +1,8 @@
 from time import perf_counter
 from scipy import matmul
-from scipy.sparse import random
-from numpy import double
+from Funciones import matriz_laplaciana_dispersa
 
-Ns = [2,4,8,15,30,60,125,250,500,1000,2000,4000,8000]
+Ns = [2,4,8,15,30,60,125,250,500,1000,2000,4000,8000,16000]
 
 Ncorridas = 4
 
@@ -20,8 +19,8 @@ for corrida in range(Ncorridas):
         
         t1 = perf_counter()
         
-        A = random(N,N,dtype=double)
-        B = random(N,N,dtype=double)
+        A = matriz_laplaciana_dispersa(N)
+        B = matriz_laplaciana_dispersa(N)
         
         t2 = perf_counter()
 

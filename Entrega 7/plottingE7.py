@@ -9,12 +9,12 @@ def unicode_exp(exp):
     else:
        return chr(0x2070 + exp)
 
-imagen = 'inv_matriz_llena'
-titulo = 'INVERSA MATRIZ LLENA'
-names = ['inv_matriz_llena_0.txt',
-         'inv_matriz_llena_1.txt',
-         'inv_matriz_llena_2.txt',
-         'inv_matriz_llena_3.txt']
+imagen = 'matmul_matriz_dispersa'
+titulo = 'MATAMUL MATRIZ DISPERSA'
+names = ['matmul_matriz_dispersa_0.txt',
+         'matmul_matriz_dispersa_1.txt',
+         'matmul_matriz_dispersa_2.txt',
+         'matmul_matriz_dispersa_3.txt']
 
 N = np.array([2,4,8,15,30,60,125,250,500,1000,2000,4000,8000,16000])#poner 16000 por matmul
 plt.figure()
@@ -36,10 +36,10 @@ plt.subplot(2,1,1)
 
 plt.hlines(dts1[13],0,16000,colors='b',linestyle='--',color='dodgerblue')#cambiar numero por matmul +1 y 16000
     
-a1 = dts1[13]/(16000)
-a2 = dts1[13]/(16000**2)
-a3 = dts1[13]/(16000**3)
-a4 = dts1[13]/(16000**4)
+a1 = dts1[13]/(16000)#13 Y 16000 para los otros casos
+a2 = dts1[13]/(16000**2)#13 Y 16000 para los otros casos
+a3 = dts1[13]/(16000**3)#13 Y 16000 para los otros casos
+a4 = dts1[13]/(16000**4)#13 Y 16000 para los otros casos
 
 plt.loglog(N,a1*N,'--',color='darkorange')
 plt.loglog(N,a2*N**2,'--',color='limegreen')
@@ -58,12 +58,12 @@ plt.title(titulo)
 
 plt.subplot(2,1,2)
 
-plt.hlines(dts2[13],0,16000,colors='b',linestyle='--', color='dodgerblue', label = 'Constante')#cambiar numero por matmul +1 y 16000
+plt.hlines(dts2[12],0,8000,colors='b',linestyle='--', color='dodgerblue', label = 'Constante')#cambiar numero por matmul +1 y 16000
 
-b1 = dts2[13]/(16000)
-b2 = dts2[13]/(16000**2)
-b3 = dts2[13]/(16000**3)
-b4 = dts2[13]/(16000**4)
+b1 = dts2[13]/(16000)#13 Y 16000 para los otros casos
+b2 = dts2[13]/(16000**2)#13 Y 16000 para los otros casos
+b3 = dts2[13]/(16000**3)#13 Y 16000 para los otros casos
+b4 = dts2[13]/(16000**4)#13 Y 16000 para los otros casos
 
 plt.loglog(N,b1*N,linestyle='--',color='darkorange', label = '$O(N)$')
 plt.loglog(N,b2*N**2,linestyle='--',color='limegreen', label = '$O(N{})$'.format(unicode_exp(2)))
